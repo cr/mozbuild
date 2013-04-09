@@ -15,7 +15,7 @@ init)
 
 	mkdir -p "${root}"
 	cd "${root}"
-	curl -fsSL https://raw.github.com/mozilla-b2g/B2G/master/scripts/bootstrap-mac.sh >b2g-bootstrap-mac.s\
+	curl -fsSL https://raw.github.com/mozilla-b2g/B2G/master/scripts/bootstrap-mac.sh >b2g-bootstrap-mac.sh
 	chmod +x b2g-bootstrap-mac.sh
 	./b2g-bootstrap-mac.sh
 	git clone git://github.com/mozilla-b2g/B2G.git
@@ -31,8 +31,8 @@ update)
 
 build)
 	time (
-		cd "${root}/B2G" \
-		&& ./build.sh $2 $3 $4
+		cd "${root}/B2G"
+		./build.sh $2 $3 $4
 	)
 	;;
 
