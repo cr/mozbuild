@@ -2,7 +2,7 @@
 # see https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Using_the_B2G_desktop_client
 #
 
-root=$(pwd)/build-desktop
+root=$(pwd)/build-desktop.noindex
 
 mozconfig () {
 	cat <<-EOF

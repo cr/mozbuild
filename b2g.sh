@@ -1,7 +1,7 @@
 #!/bin/bash
 # see https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Preparing_for_your_first_B2G_build
 
-root=$(pwd)/build-b2g
+root=$(pwd)/build-b2g.noindex
 
 cmd=$1
 case "${cmd}" in

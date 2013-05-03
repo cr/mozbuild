@@ -3,7 +3,7 @@
 # and https://developer.mozilla.org/en-US/docs/Simple_Firefox_build#Get_the_source
 #
 
-root=$(pwd)/build-firefox
+root=$(pwd)/build-firefox.noindex
 
 mozconfig() {
 	cat <<-EOF
