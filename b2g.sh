@@ -1,6 +1,24 @@
 #!/bin/bash
 # see https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Preparing_for_your_first_B2G_build
 
+device="nexus-s"
+# Valid devices to configure are:
+# - galaxy-s2
+# - galaxy-nexus
+# - nexus-s
+# - nexus-s-4g
+# - otoro
+# - unagi
+# - inari
+# - keon
+# - peak
+# - leo
+# - hamachi
+# - tara
+# - pandaboard
+# - emulator
+# - emulator-x86
+
 root=$(pwd)/build-b2g.noindex
 
 cmd=$1
@@ -20,7 +38,7 @@ init)
 	./b2g-bootstrap-mac.sh
 	git clone git://github.com/mozilla-b2g/B2G.git
 	cd B2G/
-	./config.sh nexus-s
+	./config.sh "${device}"
 	;;
 
 update)
