@@ -1,1 +1,2 @@
-*.noindex
+build*.noindex
+b2g-*.sh
