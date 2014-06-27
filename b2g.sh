@@ -1,25 +1,59 @@
 #!/bin/bash
 # see https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Preparing_for_your_first_B2G_build
 
-device="nexus-s"
-# Valid devices to configure are:
-# - galaxy-s2
-# - galaxy-nexus
-# - nexus-s
-# - nexus-s-4g
-# - otoro
-# - unagi
-# - inari
-# - keon
-# - peak
-# - leo
-# - hamachi
-# - tara
-# - pandaboard
-# - emulator
-# - emulator-x86
+#Valid devices to configure are:
+#- galaxy-s2
+#- galaxy-nexus
+#- nexus-4
+#- nexus-4-kk
+#- nexus-5
+#- nexus-s
+#- nexus-s-4g
+#- flo (Nexus 7 2013)
+#- otoro
+#- unagi
+#- inari
+#- keon
+#- peak
+#- leo
+#- hamachi
+#- helix
+#- wasabi
+#- fugu
+#- tarako
+#- tara
+#- dolphin
+#- pandaboard
+#- vixen
+#- flatfish
+#- flame
+#- emulator
+#- emulator-jb
+#- emulator-kk
+#- emulator-x86
+#- emulator-x86-jb
+#- emulator-x86-kk
 
-root=$(pwd)/build-b2g.noindex
+# device specifier is extracted from script name or taken from first argument
+# naming convention: b2g-$device.sh
+device=$(basename "$0")
+device=${device%.sh}
+device=${device#b2g-}
+
+# if script name is b2g.sh, use first argument as device specifier
+if [ "$device" == "b2g" ]
+then
+  device=$1
+  shift
+fi
+
+if [ -z "$device" ]
+then
+  echo "ERROR: first argument mut be a valid device specifier"
+  exit 5
+fi
+
+root="$(pwd)/build-b2g-${device}.noindex"
 
 cmd=$1
 case "${cmd}" in
@@ -56,7 +90,7 @@ build)
 
 flash)
 	cd "${root}/B2G"
-	sudo ./flash.sh $2 $3 $4
+	./flash.sh $2 $3 $4
 	;;
 
 *)

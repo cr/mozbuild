@@ -14,12 +14,15 @@ These scripts are tightly knit to my build environment Mac OS X 10.8. They assum
 * Mac OS X SDK 10.6
 * Android SDK
 * [Homebrew](http://mxcl.github.io/homebrew/)
+* Building B2G requires a case-sensitive file system. If yours is not, put scripts into a sufficiently large sparsebundle container.
 
 I recommend `ccache -M 10G` or more, and you should have at least 40 GByte free space on your hard drive.
 
 ## Usage
 
 The general idea is `./desktop.sh init && ./desktop update && ./desktop build && ./desktop run`, but for the time being, please refer to the code for details.
+
+The `b2g.sh` script is a bit special and requires a valid device specifier as first argument, for example `./b2g.sh flame init`. When you `ln -s b2g.sh b2g-flame.sh`, the device specifier is taken from the script's file name. 
 
 ## Current status
 
@@ -32,4 +35,4 @@ This information is likely incomplete, wrong perhaps. When in doubt, please cons
 * [Firefox](https://developer.mozilla.org/en/docs/Simple_Firefox_build)
 * [Firefox OS](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Firefox_OS_build_prerequisites)
 * [B2G-Desktop](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Using_the_B2G_desktop_client).
-
+* [B2G Tips and Tricks](https://intranet.mozilla.org/QA/B2G_Tips_and_Tricks#Buri)
