@@ -57,6 +57,8 @@ init)
 	;;
 
 update)
+	cd ~/.mozbuild/version-control-tools
+	hg pull -u
 	cd "${root}/mozilla-central"
 	hg pull -u
 	;;
